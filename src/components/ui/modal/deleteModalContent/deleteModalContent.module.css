@@ -1,0 +1,19 @@
+.buttonElement{
+    width: 80%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.buttonElement:hover{
+    border: solid 1px black
+}
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text{
+    text-align: center;
+}

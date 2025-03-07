@@ -1,0 +1,30 @@
+.container{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    list-style: none;
+    padding: 5px 0px 5px 15px;
+    margin: 20px 0px 20px 0px;
+}
+.photoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title{
+    text-align: center;
+}
+.buttonsContainer{
+    display: flex;
+    gap: 10px;
+}
+.buttonElement{
+    width: 250px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.buttonElement:hover{
+    border: solid 1px black
+}
