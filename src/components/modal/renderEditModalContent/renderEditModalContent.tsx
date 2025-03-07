@@ -6,16 +6,18 @@ import { editSeminar } from "../../../services/seminarsSlice";
 import { Seminar } from "../../../utils/types";
 import { closeEditModal } from "../../../services/modalSlice";
 interface RenderEditModalContentProps {
-  seminar: Seminar;
+  seminar: Seminar | null;
 }
 export const RenderEditModalContent = ({
   seminar,
 }: RenderEditModalContentProps) => {
-  const [title, setTitle] = useState<string>(seminar.title);
-  const [photo, setPhoto] = useState<string>(seminar.photo);
-  const [description, setDescription] = useState<string>(seminar.description);
-  const [date, setDate] = useState<string>(seminar.date);
-  const [time, setTime] = useState<string>(seminar.time);
+  const [title, setTitle] = useState<string>(seminar?.title ?? "");
+  const [photo, setPhoto] = useState<string>(seminar?.photo ?? "");
+  const [description, setDescription] = useState<string>(
+    seminar?.description ?? ""
+  );
+  const [date, setDate] = useState<string>(seminar?.date ?? "");
+  const [time, setTime] = useState<string>(seminar?.time ?? "");
   const dispatch = useDispatch<AppDispatch>();
   const setTitleCallBack = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
