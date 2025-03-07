@@ -1,51 +1,155 @@
-.input{
-  border-radius: 10px;
-  height: 50px;
-  font-size: 25px;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.input {
+	border-radius: 10px;
+	height: 50px;
+	font-size: 25px;
+	font-family: sans-serif;
+	letter-spacing: 1px;
+	box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+		rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+	background: transparent;
+	color: white;
+	font-weight: 900;
 }
-.input:focus{
-  outline: none;
+.input:focus {
+	outline: none;
 }
-.buttonClick{
-  visibility: hidden;
-}
-
-.form{
-  border: 1px solid black;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: white;
-  border-radius: 5px;
+.buttonClick {
+	visibility: hidden;
 }
 
-.inputActive{
-  background-color: green;
-}
-.isFalse{
-  background-color: red;
+.form {
+	border: 1px solid black;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	background-color: white;
+	letter-spacing: 0.2em;
+	border: 1px solid;
+	border-image: linear-gradient(20deg, #f92056 38%, #00deff 65%);
+	border-image-slice: 1;
+	background: #000000 no-repeat center / cover;
+	min-height: 300px;
+	border-radius: 50px;
 }
 
-.words{
-  font-size: 35px;
-
+.inputActive {
+	background-color: green;
+}
+.isFalse {
+	background-color: red;
 }
 
-.rightNo{
-  display: flex;
-  gap: 20px;
+.words {
+	font-size: 35px;
+	text-shadow: -1px -1px 0 hsl(0, 0%, 100%), -2px -2px 1px hsl(0, 0%, 100%);
 }
-.inputContainer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.rightNo {
+	display: flex;
+	gap: 20px;
 }
-.rightNoP{
-  font-family: sans-serif;
+.inputContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.rightNoP {
+	font-family: sans-serif;
+	background: linear-gradient(135deg, #12bcb0 20%, #fabe0e 70%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	display: inline-block;
+	padding: 0.3em 0.6em;
+	border: 3px solid transparent;
+	border-image: linear-gradient(135deg, #12bcb0 20%, #fabe0e 70%);
+	border-image-slice: 1;
+}
+
+.noRightWordCounterContainer {
+	margin-top: 10px;
+}
+
+.gradientText {
+	font-family: 'Rubik One', sans-serif;
+	font-size: 50px;
+	text-transform: uppercase;
+	background: linear-gradient(45deg, #0b2349 33%, #0d61bc 66%, #8aa9d6);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #0b2349;
+	display: table;
+	margin: 20px auto;
+}
+
+.inputStatusContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+@media (max-width: 600px) {
+	.buttonClick {
+		visibility: visible;
+		appearance: button;
+		background: transparent;
+		border: 1px solid #000;
+		border-radius: 4px;
+		border: 1px solid;
+		border-image: linear-gradient(20deg, #f92056 38%, #00deff 65%);
+		border-image-slice: 1;
+		box-sizing: border-box;
+		color: #ffffff;
+		cursor: pointer;
+		display: inline-block;
+		font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		margin: 0 5px 10px 0;
+		overflow: visible;
+		padding: 12px 40px;
+		text-align: center;
+		text-transform: none;
+		touch-action: manipulation;
+		user-select: none;
+		-webkit-user-select: none;
+		vertical-align: middle;
+		white-space: nowrap;
+		width: 70%;
+		margin: 10px 0px 25px 0px;
+		letter-spacing: 3px;
+	}
+	.buttonClick:focus {
+		text-decoration: none;
+	}
+
+	.buttonClick:hover {
+		text-decoration: none;
+	}
+
+	.buttonClick:active {
+		box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+		outline: 0;
+	}
+
+	.rightNo {
+		flex-direction: column;
+	}
+	.form {
+		height: 100%;
+		width: 100%;
+	}
+	.words {
+		white-space: nowrap;
+		padding-left: 15px;
+	}
+}
+
+.statusContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }

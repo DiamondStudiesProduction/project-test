@@ -1,10 +1,11 @@
-import { SyntheticEvent, useEffect, useState } from 'react';
+import { SyntheticEvent, useEffect, useRef, useState } from 'react';
 import { massiveOfEnglishWords } from 'src/constants/articleProps';
 import { FormUI } from '../ui/form/form';
-
+import tarkov from '../../images/tarkov.jpg';
 function getRandomInRange(min: number, max: number) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 export const Form = () => {
 	const [state, setState] = useState(massiveOfEnglishWords);
 	const [count, setCount] = useState(state.length + 1);
@@ -14,8 +15,16 @@ export const Form = () => {
 	const [randomLang, setRandomLang] = useState(0);
 	const [right, setRigth] = useState(0);
 	const [noRight, setNoRight] = useState(0);
+	const [noRightWordCounter, setNoRightWordCounter] = useState(0);
 	const [rightAnserOrNot, setRightAnserOrNot] = useState<null | boolean>(null);
+	const [wrongWord, setWrongWord] = useState('');
+	const [wrongWordSaver, setWrongWordSaver] = useState<any>(null);
 
+	const form = document.querySelector('form');
+	const refInput = useRef<any>();
+	if (form) {
+		form.style.backgroundImage = `url("https://c.wallhere.com/photos/1e/b8/minimalism-201373.jpg!d")`;
+	}
 	const setIntervalFunction = (value: boolean) => {
 		if (value) {
 			setRightAnserOrNot(true);
@@ -46,14 +55,24 @@ export const Form = () => {
 
 	const buttonClick = (e: SyntheticEvent) => {
 		e.preventDefault();
+		if (input === '') return;
 		if (state.length > 0) {
+			const inputToLowerCase = input.toLowerCase();
+			const inputTrim = inputToLowerCase.trim();
 			const foundItem = state[randomWord].find(
-				(item: string) => item === input
+				(item: string) => item === inputTrim
 			);
 			if (foundItem) {
+				setWrongWordSaver(null);
+				setNoRightWordCounter(0);
+				setWrongWord('');
 				setIntervalFunction(true);
 				setRigth(right + 1);
 			} else {
+				const wrongWord = `${state[randomWord][0]} - ${state[randomWord][1]}`;
+				setWrongWordSaver(wrongWord);
+				setNoRightWordCounter(1);
+				setWrongWord(input);
 				setIntervalFunction(false);
 				setNoRight(noRight + 1);
 			}
@@ -74,6 +93,10 @@ export const Form = () => {
 			right={right}
 			noRight={noRight}
 			rightAnserOrNot={rightAnserOrNot}
+			wrongWord={wrongWord}
+			noRightWordCounter={noRightWordCounter}
+			wrongWordSaver={wrongWordSaver}
+			refInput={refInput}
 		/>
 	);
 };

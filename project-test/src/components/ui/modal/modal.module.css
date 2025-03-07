@@ -1,0 +1,31 @@
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  margin: auto;
+}
+.content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  width: 300px;
+  min-height: 200px;
+}
+.buttonClose {
+  background-color: transparent;
+  border: none;
+}
+.buttonClose:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.buttonCloseContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.title {
+  text-align: center;
+  font-size: 25px;
+}

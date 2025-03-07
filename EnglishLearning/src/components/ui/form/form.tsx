@@ -1,14 +1,14 @@
+import { forwardRef } from 'react';
 import styles from './form.module.css';
-export const FormUI = (props: any) => {
+export const FormUI = forwardRef((props: any, refInput: any) => {
 	return (
-		<form className={styles.form}>
-			<div>
-				<p className={styles.words}>{props.word}</p>
-			</div>
-			<div>
+		<form className={styles.form} name='check-form'>
+			<p className={styles.words}>{props.word}</p>
+			<div className={styles.inputStatusContainer}>
 				<div className={styles.inputContainer}>
 					<input
 						type='text'
+						ref={refInput}
 						autoFocus
 						className={`${styles.input} ${
 							props.rightAnserOrNot === true
@@ -31,7 +31,20 @@ export const FormUI = (props: any) => {
 					<p className={styles.rightNoP}>Неправильно: {props.noRight}</p>
 					<p className={styles.rightNoP}>осталось слов: {props.count}</p>
 				</div>
+
+				<div className={styles.noRightWordCounterContainer}>
+					{!props.noRightWordCounter ? (
+						''
+					) : (
+						<div className={styles.statusContainer}>
+							<p className={styles.rightNoP}>Неправильно: {props.wrongWord}</p>
+							<p className={styles.rightNoP}>
+								Правильно: {props.wrongWordSaver}
+							</p>
+						</div>
+					)}
+				</div>
 			</div>
 		</form>
 	);
-};
+});
