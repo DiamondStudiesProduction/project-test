@@ -1,0 +1,12 @@
+.container{
+    width: 2.3em;
+    height: 2.3em;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.container:hover{
+    opacity: 90%;
+    transform: scale(1.1);
+}

@@ -5,7 +5,7 @@ import { AppDispatch } from "../../../services/store";
 import { closeDeleteModal } from "../../../services/modalSlice";
 import { deleteSeminar } from "../../../services/seminarsSlice";
 interface RenderDeleteModalContentProps {
-  seminar: Seminar;
+  seminar: Seminar | null;
 }
 
 export const RenderDeleteModalContent = ({
@@ -13,7 +13,7 @@ export const RenderDeleteModalContent = ({
 }: RenderDeleteModalContentProps) => {
   const dispatch = useDispatch<AppDispatch>();
   const onDelete = () => {
-    dispatch(deleteSeminar(seminar.id));
+    dispatch(deleteSeminar(seminar?.id));
     dispatch(closeDeleteModal());
     /*
     ----------

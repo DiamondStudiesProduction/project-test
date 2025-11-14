@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  max-width: 25em;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+.colorPallete_container {
+  display: flex;
+  gap: 0.75em;
+}
+
+.sizes_container {
+  display: flex;
+  gap: 0.25em;
+}
+
+.buttons_container {
+  display: flex;
+  gap: 1em;
+}
+
+.favButton_container {
+  width: 2.2em;
+  height: 2.1em;
+  border: 0.1px solid #929292;
+  border-radius: 20%;
+}
+
+.description_summary {
+  color: #929292;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.description_text {
+  letter-spacing: 4px;
+  line-height: 1.7em;
+  margin: 1em 0em 1em 0em;
+}
+
+.description_container_details {
+  cursor: pointer;
+  word-break: break-all;
+}
+
+.description_container_details[open] .description_summary:after{
+  content: "-";
+}
+
+.description_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 22.25em;
+}
+
+.description_summary::after{
+  content: "+";
+  font-size: 1.3em;
+}

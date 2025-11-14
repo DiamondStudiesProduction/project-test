@@ -1,0 +1,7 @@
+.list_container {
+  max-width: 98em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 7em;
+  column-gap: 1.3em;
+}

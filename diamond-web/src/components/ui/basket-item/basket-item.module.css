@@ -1,0 +1,71 @@
+.item_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+  width: 73em;
+}
+
+.item_container_elements {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.image_description_container {
+  display: flex;
+  gap: 1.5em;
+}
+
+.image {
+  width: 15.6em;
+  height: 16.9em;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.special {
+  color: #929292;
+}
+
+.description_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.price_item {
+  font-weight: 700;
+}
+
+.price_counter_container {
+  display: flex;
+  gap: 6.4em;
+}
+
+.counter {
+  display: flex;
+  gap: 1.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  max-height: 1.6em;
+  align-items: center;
+}
+
+.button_counter {
+  display: flex;
+  height: 1.375em;
+  align-items: center;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.discount_container{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.discount{
+  font-size: 0.875em;
+  text-decoration: line-through;
+}

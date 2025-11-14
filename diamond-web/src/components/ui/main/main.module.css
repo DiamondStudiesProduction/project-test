@@ -1,0 +1,45 @@
+.section1 {
+  align-self: flex-end;
+}
+
+.section2 {
+  align-self: flex-end;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 40em;
+}
+
+.main_image {
+  background-image: url("../../../../public/images/main_image.png");
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.title {
+  text-align: center;
+  width: 100%;
+  font-size: 6em;
+  letter-spacing: 30px;
+  color: #f5f5f5;
+}
+
+.title_letter {
+  color: #9f0909;
+}
+
+.title_gender {
+  font-size: 3em;
+  color: #f5f5f5;
+  letter-spacing: 20px;
+  padding: 0 15px 0 15px;
+}

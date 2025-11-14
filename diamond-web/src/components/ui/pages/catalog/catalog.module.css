@@ -1,0 +1,9 @@
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  display: flex;
+  gap: 5.200em;
+}

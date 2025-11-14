@@ -1,0 +1,12 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 3.44em;
+  column-gap: 1.3em;
+}
+
+.filter_container{
+  display: flex;
+  justify-content: end;
+  padding: 0 0 1em 0;
+}

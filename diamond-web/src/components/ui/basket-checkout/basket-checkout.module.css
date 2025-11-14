@@ -1,0 +1,32 @@
+.container {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding-top: 1.875em;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5.312em;
+}
+
+.description {
+  display: flex;
+  width: 31.25em;
+  margin-left: 0.6em;
+  margin-right: 0.6em;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+.price {
+  font-size: 1.125em;
+  font-weight: 700;
+}
+
+.title_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  color: #929292;
+}

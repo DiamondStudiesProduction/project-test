@@ -19,12 +19,17 @@ export const Form = () => {
 	const [rightAnserOrNot, setRightAnserOrNot] = useState<null | boolean>(null);
 	const [wrongWord, setWrongWord] = useState('');
 	const [wrongWordSaver, setWrongWordSaver] = useState<any>(null);
+	const [wrongWords, setWrongWords] = useState<any>([]);
+	const [grade, setGrade] = useState('');
+
+	let mas: any = [];
 
 	const form = document.querySelector('form');
 	const refInput = useRef<any>();
 	if (form) {
 		form.style.backgroundImage = `url("https://c.wallhere.com/photos/1e/b8/minimalism-201373.jpg!d")`;
 	}
+
 	const setIntervalFunction = (value: boolean) => {
 		if (value) {
 			setRightAnserOrNot(true);
@@ -48,14 +53,58 @@ export const Form = () => {
 		}
 	};
 
+	const gradeDef = () => {
+		if (state.length == 0) {
+			const procent = (noRight / massiveOfEnglishWords.length) * 100;
+			console.log(`Процент ошибок (${procent}%)`);
+			if (procent == 0) {
+				setGrade('A+');
+			} else if (procent <= 1) {
+				setGrade('A');
+			} else if (procent <= 2) {
+				setGrade('B');
+			} else if (procent <= 3) {
+				setGrade('C');
+			} else if (procent <= 4) {
+				setGrade('D');
+			} else {
+				setGrade('F');
+			}
+		}
+	};
+
+	const resetStates = () => {
+		setState(massiveOfEnglishWords);
+		console.log(state);
+		setCount(massiveOfEnglishWords.length + 1);
+		setInput('');
+		setWord('');
+		setRandomWord(0);
+		setRandomLang(0);
+		setRigth(0);
+		setNoRight(0);
+		setNoRightWordCounter(0);
+		setRightAnserOrNot(null);
+		setWrongWord('');
+		setWrongWordSaver(null);
+		setGrade('');
+	};
+
+	const triggerFormReset = (e: SyntheticEvent) => {
+		e.preventDefault();
+		resetStates();
+	};
+
 	useEffect(() => {
 		updateWord();
 		setCount(count - 1);
+		gradeDef();
 	}, [state]);
 
 	const buttonClick = (e: SyntheticEvent) => {
 		e.preventDefault();
 		if (input === '') return;
+
 		if (state.length > 0) {
 			const inputToLowerCase = input.toLowerCase();
 			const inputTrim = inputToLowerCase.trim();
@@ -71,6 +120,7 @@ export const Form = () => {
 			} else {
 				const wrongWord = `${state[randomWord][0]} - ${state[randomWord][1]}`;
 				setWrongWordSaver(wrongWord);
+				mas.push(wrongWord)
 				setNoRightWordCounter(1);
 				setWrongWord(input);
 				setIntervalFunction(false);
@@ -80,6 +130,7 @@ export const Form = () => {
 			const newState = state.filter((item: any) => item !== wordToRemove);
 			setState(newState);
 		}
+console.log(mas[1]);
 		setInput('');
 	};
 
@@ -97,6 +148,9 @@ export const Form = () => {
 			noRightWordCounter={noRightWordCounter}
 			wrongWordSaver={wrongWordSaver}
 			refInput={refInput}
+			grade={grade}
+			state={state}
+			triggerFormReset={triggerFormReset}
 		/>
 	);
 };

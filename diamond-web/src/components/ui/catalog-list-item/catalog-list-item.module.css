@@ -1,0 +1,72 @@
+.a {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container_images {
+  position: relative;
+}
+
+.container:hover {
+  transform: scale(1.01);
+  transition: transform 0.2s ease;
+}
+
+.fav {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  right: 5px;
+  bottom: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  transition: transform 0.2s ease;
+}
+
+.fav:hover {
+  background-color: #2c2c2c;
+  transform: scale(1.08);
+}
+
+.text_name {
+  font-size: 0.75em;
+  line-height: 1.5em;
+}
+
+.text_price {
+  font-size: 0.875em;
+}
+
+.heart_fav {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  fill: #ffffff;
+  max-width: 1.4em;
+  max-height: 1.4em;
+}
+
+.heart_fav:hover {
+  fill: white;
+  transition: fill 0.3s ease;
+}
+
+.discount_container {
+  display: flex;
+  gap: 0.7em;
+}
+
+.discount_sum {
+  text-decoration: line-through;
+  font-size: 0.875em;
+  color: #929292;
+}
+
+.discount_procent {
+  font-size: 0.7em;
+  color: red;
+}

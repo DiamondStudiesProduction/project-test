@@ -30,7 +30,6 @@ export const Seminars = () => {
   const editSeminar = useSelector(
     (state: RootState) => state.modal.edit.seminar
   );
-
   const dispatch = useDispatch<AppDispatch>();
 
   const handleDelete = useCallback(
