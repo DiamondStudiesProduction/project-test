@@ -5,7 +5,6 @@ import Catalog from "../pages/catalog/catalog";
 const App = () => {
   return (
     <>
-    
       <HeaderLayout />
       <Catalog />
     </>
