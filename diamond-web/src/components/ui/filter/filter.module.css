@@ -1,15 +1,26 @@
-.title{
-    margin-bottom: 1.4em;
+.title {
+  margin-bottom: 1.4em;
+  cursor: pointer;
 }
 
-.main_form{
-    display: flex;
-    flex-direction: column;
-    gap: 2.5em;
+.main_form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
 }
 
-.checkbox_container{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+.checkbox_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.details {
+  width: 14.4em;
+}
+
+@media (max-width: 1100px) {
+  .checkbox_container_button {
+    max-width: 25%;
+  }
 }

@@ -1,9 +1,53 @@
-.main {
-  display: flex;
-  flex-direction: row;
-}
-
 .container {
   display: flex;
-  gap: 5.200em;
+  gap: 5.2em;
+}
+
+.filter_container {
+  display: none;
+  justify-content: end;
+  padding: 0 0 1em 0;
+}
+
+.filter_container_mobile {
+  position: fixed;
+  top: -110vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: block;
+  padding-top: 1em;
+  transition: top 0.4s ease-out;
+}
+
+.filter_text {
+  cursor: pointer;
+}
+
+.arrow {
+  color: #929292;
+}
+
+.filter_mobile_isOpen {
+  top: 0;
+}
+
+.filter_container_mobile_content {
+  margin-top: 10em;
+}
+
+@media (max-width: 1100px) {
+  .filter_content {
+    display: none;
+  }
+
+  .container_title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+  }
+
+  .filter_container {
+    display: flex;
+  }
 }

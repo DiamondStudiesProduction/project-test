@@ -4,36 +4,42 @@ import RangeSlider from "../../range-slider/range-slider";
 import styles from "./filter.module.css";
 const FilterUI = () => {
   return (
-      <section>
-        <form className={styles.main_form}>
-          <div>
-            <p className={styles.title}>Цвет</p>
+    <section className={styles.container}>
+      <form className={styles.main_form}>
+        <div>
+          <details className={styles.details} open>
+            <summary className={styles.title}>Цвет</summary>
             <div className={styles.checkbox_container}>
               <Checkbox text="Белый" id="color_white" />
               <Checkbox text="Черный" id="color_black" />
               <Checkbox text="Розовый" id="color_pink" />
             </div>
-          </div>
-          <div>
-            <p className={styles.title}>Размер</p>
+          </details>
+        </div>
+        <div>
+          <details className={styles.details} open>
+            <summary className={styles.title}>Размер</summary>
             <div className={styles.checkbox_container}>
               <Checkbox text="L" id="size_L" />
               <Checkbox text="M" id="size_M" />
             </div>
-          </div>
-          <div>
-            <p className={styles.title}>Цена</p>
+          </details>
+        </div>
+        <div>
+          <details className={styles.details} open>
+            <summary className={styles.title}>Цена</summary>
             <div className={styles.checkbox_container}>
               <RangeSlider />
             </div>
+          </details>
+        </div>
+        <div>
+          <div className={`${styles.checkbox_container} ${styles.checkbox_container_button}`}>
+            <Button>Применить</Button>
           </div>
-          <div>
-            <div className={styles.checkbox_container}>
-              <Button>Применить</Button>
-            </div>
-          </div>
-        </form>
-      </section>
+        </div>
+      </form>
+    </section>
   );
 };
 

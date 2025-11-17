@@ -44,3 +44,8 @@ export interface IHeaderUI {
   mobileAsideIsOpen: boolean;
   handleToggleMobileAside: () => void;
 }
+
+export interface ICatalogUI {
+  mobileFilterIsOpen: boolean;
+  handleTogglemMbileFilter: () => void;
+}

@@ -3,7 +3,6 @@ import styles from "./catalog-list.module.css";
 const CatalogListUI = () => {
   return (
     <section>
-      <div className={styles.filter_container}><span>Фильтры</span></div>
       <div>
         <ul className={styles.list}>
           <CatalogListItem />

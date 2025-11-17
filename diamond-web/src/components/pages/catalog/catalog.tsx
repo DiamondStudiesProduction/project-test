@@ -1,7 +1,19 @@
+import { useState } from "react";
 import CatalogUI from "../../ui/pages/catalog/catalog";
 
 const Catalog = () => {
-  return <CatalogUI />;
+  const [mobileFilterIsOpen, setMobileFilterIsOpen] = useState<boolean>(false);
+
+  const handleTogglemMbileFilter = () => {
+    setMobileFilterIsOpen(!mobileFilterIsOpen);
+  };
+  
+  return (
+    <CatalogUI
+      mobileFilterIsOpen={mobileFilterIsOpen}
+      handleTogglemMbileFilter={handleTogglemMbileFilter}
+    />
+  );
 };
 
 export default Catalog;
