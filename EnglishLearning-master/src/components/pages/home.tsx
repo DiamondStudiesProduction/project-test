@@ -1,7 +1,7 @@
 import { Form } from '../form/form';
 
-export const Home = ({wordsData}: {wordsData: any}) => {
-	return <Form wordsData={wordsData}/>
+export const Home = () => {
+	return <Form/>
 };
 /*
 import { useEffect, useState } from 'react';
